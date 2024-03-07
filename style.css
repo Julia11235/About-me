@@ -1,0 +1,310 @@
+html{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;     /*box-sizing: border-box; ułatwia zarządzanie rozmiarami elementów, zwłaszcza gdy chcesz precyzyjnie kontrolować szerokość i wysokość elementu wraz z paddingiem i obramowaniem, bez konieczności dodawania ich do wartości szerokości i wysokości.*/
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    background: peachpuff;
+    display: flex;              /*Flexbox oferuje wiele właściwości, które pozwalają na elastyczne zarządzanie rozmieszczeniem elementów w kontenerze, takie jak:
+                                    -justify-content: Określa rozmieszczenie elementów wzdłuż osi głównej flexboxa (np. poziomo).
+                                    -align-items: Określa rozmieszczenie elementów wzdłuż osi krzyżowej flexboxa (np. pionowo).
+                                    -flex-direction: Określa kierunek rozmieszczania elementów w kontenerze flexboxa (np. row, column).
+                                    -flex-wrap: Określa, czy elementy flexboxa mają być zawijane na nowe wiersze, gdy nie mieszczą się w jednym rzędzie.*/
+    flex-direction: column;     /* elementy wewnątrz body będą układane w kolumnie, co oznacza, że będą rozmieszczone jeden pod drugim.*/
+    justify-content: center;    /*  elementy są wyśrodkowane wzdłuż osi głównej */
+    align-items: center;
+    min-height: 100vh;          /*Viewport height - element będzie miał co najmniej tyle wysokości, ile wynosi wysokość całego widoku przeglądarki. Wysokość elementu na 100% wysokości widoku.*/
+    margin:0;
+    padding: 0;
+    border: 0;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+/* menu */
+.navbar {
+    z-index: 9999;      /*żeby ten element był nad wszystkimi innymi */
+    overflow: hidden;   /*ukrycie wszelkiej zawartości, która wystaje poza granice kontenera, a jednocześnie nie zmienia ona samego rozmiaru kontenera */
+    background-color: rgb(4, 10, 0);
+    position: fixed;    /*Gdy ustawisz position: fixed; dla elementu, element ten będzie "utwierdzony" w określonym miejscu na stronie i nie będzie przesuwał się wraz z przewijaniem strony.*/
+    top: 0;
+    width: 100%;
+  }
+  
+  .navbar a {
+    float: left;    /*Kiedy zastosujesz float: left; do elementu, to ten element będzie umieszczany z lewej strony swojego kontenera, a tekst i inne elementy będą zaczynały się od jego prawej strony*/
+    text-align: center;
+    padding: 14px 16px;
+    font-size: 17px;
+  }
+  
+  .navbar a:hover {     /* określa styl, który ma być zastosowany do linku, gdy jest on "nawigowany" lub "najechany" kursorem.styl ten będzie widoczny, gdy użytkownik najedzie kursorem na dany link*/
+    background: rgb(240, 219, 201);
+    color: rgb(20, 36, 10);
+  }
+  
+  .main {
+    padding: 16px;
+    height: 1100px;
+  }
+
+/* link */
+a:link {
+    color: rgb(46, 78, 26);
+    background-color: transparent;
+    text-decoration: none;      /*bez podkreślenia*/
+  }
+  a:visited {
+    color: rgb(46, 78, 26);
+    background-color: transparent;
+    text-decoration: none;
+  }
+  a:hover {
+    color: peachpuff;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  a:active {
+    color: rgb(46, 78, 26);
+    background-color: transparent;
+    text-decoration: none;
+  }
+
+/* stopka */
+.footer{
+    position:static;    /*Gdy ustawisz position: fixed; dla elementu, element ten będzie "utwierdzony" w określonym miejscu na stronie i nie będzie przesuwał się wraz z przewijaniem strony.*/
+    bottom: 0;
+    color: rgb(46, 78, 26);
+}
+
+
+
+
+
+.container{
+    position: relative;     /* możesz używać właściwości takich jak top, right, bottom i left do przemieszczania tego elementu w pionie i poziomie, zachowując jednocześnie przestrzeń, która została zarezerwowana dla tego elementu w normalnym układzie strony.*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    max-width: 1000px;
+    min-height: 1000px;
+    background: white;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    box-shadow: 0 35px 55px rgb(0, 0, 0, 0.5);
+    margin: 50px;
+
+}
+.container .leftSide{
+    position: relative;
+    background: rgb(20, 36, 10);
+    padding: 40px;
+}
+.profileText{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 3px solid rgb(184, 170, 148, 0.5);
+}
+.profileText .imgBx{
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.profileText .imgBx img{
+    position: absolute;
+    top: 0;
+    left:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;      /*Określa, w jaki sposób zawartość powinna być dopasowana i dostosowana do wymiarów kontenera, jednocześnie zachowując proporcje.*/
+}
+.profileText .h2Title{
+    color: peachpuff;
+    font-size: 1.5em;
+    margin-top: 20px;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 600;   /*grubości czcionki*/
+    line-height: 1.4em; /*wysokości linii wewnątrz bloku tekstu*/
+}
+.profileText h2 span{
+    font-size: 0.8em;
+    font-weight: 300;
+}
+.personalInfo{
+    padding-top: 40px;
+}
+.title{
+    color:peachpuff;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+.personalInfo ul{
+    position: relative;
+}
+.personalInfo ul li{
+    position: relative;
+    left: -36px;
+    list-style: none;
+    margin: 10px 0;
+}
+.personalInfo ul li .icon{
+    display: inline-block;
+    width: 30px;
+    font-size: 20px;
+    color:rgb(46, 78, 26);
+}
+.personalInfo ul li span{
+    color:peachpuff;
+    font-weight: 300;
+}
+
+
+
+
+
+.container .rightSide{
+    position: relative;
+    background: white;
+    padding: 40px;
+}
+.information{
+    margin-bottom: 50px;
+}
+/* .information:last-child{
+    margin-bottom: 0;
+} */
+.title2{
+    color:rgb(46, 78, 26);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+p{
+    color:rgb(46, 78, 26);
+}
+
+.information .box{
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+}
+
+.information .box .example{
+    text-align: center;
+    min-width: 150px;
+    color:rgb(46, 78, 26);
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+.information .box .example .h2{
+    text-transform: uppercase;
+    color: rgb(46, 78, 26);
+    font-weight: 600;
+}
+.information .box .example h6{
+    text-align: center;
+    min-width: 150px;
+    color:rgb(46, 78, 26);
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+.information .box .text h4{
+    text-transform: uppercase;
+    color: rgb(20, 36, 10);
+    font-size: 16px;
+}
+
+
+
+
+
+
+
+/* subpages */
+.container_subPage{
+    
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    min-height: 1000px;
+    background: white;
+    display: grid;
+    grid-template-columns: 1fr 10fr;
+    box-shadow: 0 35px 55px rgb(0, 0, 0, 0.5);
+    margin: 50px;
+}
+.leftSide_subPage{
+    position: relative;
+    background: rgb(20, 36, 10);
+    padding: 40px;
+}
+
+.rightSide_subPage{
+    position: relative;
+    background: white;
+    padding: 40px;
+}
+.biggerIcon{
+    display: inline-block;
+    width: 30px;
+    font-size: 30px;
+}
+.skills{
+    margin: 20px;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;  /*collapse dla border-collapse oznacza, że ramki komórek tabeli zostaną złączone (zwinięte), nie będzie pomiędzy nimi dodatkowego odstępu. */
+}
+
+td { 
+    border: 3px solid rgb(184, 170, 148, 0.5); 
+    padding: 20px;
+    text-align: center;
+    color: rgb(46, 78, 26);
+}
+
+.language ul li{
+    margin-bottom: 50px;
+    color: rgb(46, 78, 26);
+}
+.language .percent{
+    position: relative;
+    width: 90%;
+    height: 6px;
+    background: rgb(184, 170, 148, 0.5);
+    display:block;
+    margin-top: 5px;
+}
+.language .percent div{
+    position: absolute;
+    top:0;
+    left:0;
+    height: 100%;
+    background:rgb(46, 78, 26); 
+}
+
+
+/* hobbies */
+.hobbies ul{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+.hobbies ul li{
+    list-style: none;
+    font-size: 18px;
+    color: rgb(46, 78, 26);
+    font-weight: 600;
+    margin: 10px 0;
+}
